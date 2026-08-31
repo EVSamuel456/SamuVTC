@@ -88,6 +88,11 @@ a {
 .banner2 {
     display: none !important;
 }
+.banner3 {
+    position: absolute;
+    top: 56%;
+    right: 8%;
+}
 
 @media screen and (max-width: 768px) {
     body {
@@ -128,5 +133,8 @@ a {
     .banner2 {
         display: block !important;
         position: static;
+    }
+    .banner3 {
+        display: static;
     }
 }
