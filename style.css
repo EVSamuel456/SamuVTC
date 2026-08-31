@@ -97,7 +97,9 @@ a {
         justify-content: center;
     }
     .contain {
+        display: flex;
         margin: 5px 5px;
+        align-items: center;
     }
     .end {
         margin-top: auto;
