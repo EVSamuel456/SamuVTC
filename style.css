@@ -81,6 +81,13 @@ a {
     box-shadow: 8px 8px black;
     background-color: greenyellow;
 }
+.banner1 {
+    display: block;
+    position: static;
+}
+.banner2 {
+    display: none;
+}
 
 @media screen and (max-width: 768px) {
     body {
@@ -114,5 +121,12 @@ a {
     }
     .right-panel {
         display: none;
+    }
+    .banner1 {
+        display: none;
+    }
+    .banner2 {
+        display: block;
+        position: static;
     }
 }
