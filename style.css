@@ -86,7 +86,7 @@ a {
     position: static;
 }
 .banner2 {
-    display: none;
+    display: none !important;
 }
 
 @media screen and (max-width: 768px) {
@@ -123,10 +123,10 @@ a {
         display: none;
     }
     .banner1 {
-        display: none;
+        display: none !important;
     }
     .banner2 {
-        display: block;
+        display: block !important;
         position: static;
     }
 }
