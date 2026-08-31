@@ -99,6 +99,7 @@ a {
     .contain {
         display: flex;
         margin: 5px 5px;
+        flex-direction: column;
         justify-content: center;
     }
     .end {
