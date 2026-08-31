@@ -99,7 +99,7 @@ a {
     .contain {
         display: flex;
         margin: 5px 5px;
-        align-items: center;
+        justify-content: center;
     }
     .end {
         margin-top: auto;
