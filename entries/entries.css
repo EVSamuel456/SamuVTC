@@ -82,6 +82,18 @@ body {
     right: 17%;
     color: white;
 }
+.banner1 {
+    display: block;
+    position: static;
+}
+.banner2 {
+    display: none !important;
+}
+.banner3 {
+    position: absolute;
+    top: 94%;
+    right: 8%;
+}
 
 @media screen and (max-width: 768px) {
     body {
@@ -121,5 +133,16 @@ body {
     }
     .comenta {
         display: none;
+    }
+    .banner1 {
+        display: none !important;
+    }
+    .banner2 {
+        display: block !important;
+        position: static;
+    }
+    .banner3 {
+        position: static;
+        display: block;
     }
 }
