@@ -90,7 +90,7 @@ a {
 }
 .banner3 {
     position: absolute;
-    top: 56%;
+    top: 98%;
     right: 8%;
 }
 
@@ -135,6 +135,7 @@ a {
         position: static;
     }
     .banner3 {
-        display: static;
+        position: statoc;
+        display: block;
     }
 }
