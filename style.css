@@ -16,7 +16,6 @@ body {
     padding: auto;
     height: 100%;
     display: block;
-    gap: 10px;
 }
 a {
     text-decoration: none;
@@ -85,6 +84,7 @@ a {
 .banner1 {
     display: block;
     position: static;
+    margin: 10px;
 }
 .banner2 {
     display: none !important;
