@@ -16,6 +16,7 @@ body {
     padding: auto;
     height: 100%;
     display: block;
+    gap: 10px;
 }
 a {
     text-decoration: none;
