@@ -89,6 +89,7 @@ a {
 .banner2 {
     display: block;
     position: static;
+    margin: 10px;
 }
 .banner3 {
     position: absolute;
@@ -133,7 +134,7 @@ a {
         display: none !important;
     }
     .banner2 {
-        order: 1 !important;
+        order: -1;
         display: block;
         position: static;
     }
