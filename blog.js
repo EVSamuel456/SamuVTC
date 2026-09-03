@@ -10,8 +10,8 @@ fetch('posts.json')
                 <a href="${entrada.url}">
                     <h1>${entrada.title}</h1>
                     <small>${entrada.date}</small>
-                    <p>${entrada.description}</p>
                     <img class="principal-img" src="${entrada.image}">
+                    <p>${entrada.description}</p>
                 </a>
             `;
             contenedor.appendChild(elemento);
