@@ -106,6 +106,8 @@ a {
     }
     .contain {
         margin: 5px 5px;
+        display: flex;
+        flex-direction: column;
     }
     .end {
         margin-top: auto;
