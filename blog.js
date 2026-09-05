@@ -10,11 +10,14 @@ fetch('posts.json')
                 <a href="${entrada.url}">
                     <h1>${entrada.title}</h1>
                     <small>${entrada.date}</small>
-                    <img class="principal-img" src="${entrada.image}">
                     <p>${entrada.description}</p>
+                    <img class="principal-img" src="${entrada.image}">
                 </a>
             `;
             contenedor.appendChild(elemento);
+            if (entrada.image === "none") {
+                elemento.querySelector('img').style.display = 'none';
+            }
         });
     })
     .catch(error => console.error('Error al cargar las entradas:', error));
