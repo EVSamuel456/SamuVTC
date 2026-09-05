@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="En esta entrada encontrarás la manera de hacer una lista para tu blog, fácil y rápido.">
+    <title>Como hacer una lista de entradas de blog (fácil)</title>
+    <link rel="stylesheet" href="../entries.css">
+    <link rel="icon" type="image/x-icon" href="../../icon.ico">
+</head>
+<body>
+    <div class="background"></div>
+    <main class="contain">
+        <a href="../../index.html">
+            <img src="../../logo.png" alt="logo" class="logo">
+        </a>
+        <div class="banner1">
+            <div id="frame" style="width: 728px;margin: auto;z-index: 99998;height: auto">
+              <iframe data-aa='2454201' src='//ad.a-ads.com/2454201/?size=728x90'
+                style='border:0; padding:0; width:728px; height:90px; overflow:hidden;display: block;margin: auto'></iframe>
+            </div>
+        </div>
+        <div class="entry-body">
+            <!--cuerpo de la entrada-->
+            <div class="entry">
+                <!--cabecera-->
+                <h1>Como hacer una lista de entradas de blog (fácil)</h1>
+                <small>5/9/2026</small>
+                <!--contenido-->
+                <h2>Paso 1: Crear un archivo .json</h2>
+                <p class="text">Crear el archivo en la carpeta raíz de tu proyecto HTML, y recuerda ponerle un nombre que recuerdes fácil (ejemplos: posts, entradas, entre otras...). Una vez creada, debes agregar una estructura de lo que se mostrará en la entrada. Aquí un ejemplo:</p>
+                <pre>
+                    <code>
+[
+    {
+        "título": "Nombre de la entrada",
+        "fecha": "3/9/2026",
+        "descripción": "una descripción de tu entrada",
+        "imagen": "imagenes/imagen.jpg",
+        "url": "entradas/entrada.html"
+    }
+]
+                    </code>
+                </pre>
+                <p class="text">Pueden ser los nombres que quieras. Recuerda que en imagen y url deben tener la dirección de su respectiva imagen y archivo de entrada.</p>
+                <h2>Paso 2: Has la etiqueta de la lista en el HTML</h2>
+                <p class="text">Dentro del "body" del HTML principal agrega un div donde se creará la lista de entradas y luego colocale el "id" y "class" que quieras.</p>
+                <pre>
+                    <code>
+&lt;div class="entries-list" id="entries-list"&gt;
+                    </code>
+                </pre>
+                <p class="text">El "class" es para cuando quieras editar el estilo de la lista, y el "id" para que el siguiente script pueda identificar a esta.</p>
+                <h2>Promoción</h2>
+                <p class="text">¿Tienes un bodegón y alguna ves ha fallado tu punto de venta? Con esta guía de conectividad entre puntos podrás entender mejor tus aparatos y dejar de perder dinero. ¡Ve al siguiente link para más!: <a href="https://app.komvii.com/checkout/0Ivqc6fa04aNjl6ZToEPg6WYH6Mew2uR" target="_blank">https://app.komvii.com/checkout/0Ivqc6fa04aNjl6ZToEPg6WYH6Mew2uR</a></p>
+                <h2>Paso 3: Crear script JavaScript corto</h2>
+                <p class="text">Con el archivo .json en la carpeta, crea otro archivo de extensión .js y ponle el nombre que quieras (ejemplos: script, blog...). Dentro de este deberas poner un código similar a este:</p>
+                <pre>
+                    <code>
+fetch('posts.json') // nombre del archivo .json.
+    .then(response => response.json())
+    .then(entradas => {
+        const contenedor = document.getElementById('entries-list'); // nombre del id del HTML.
+        
+        entradas.forEach(entrada => {
+            const elemento = document.createElement('li');
+            elemento.className = 'entry'; // "class" de la entrada.
+            elemento.innerHTML = `
+                &lt;a href="${entrada.url}"&gt;
+                    &lt;h1&gt;${entrada.título}&lt;/h1&gt;
+                    &lt;small&gt;${entrada.fecha}&lt;/small&gt;
+                    &lt;img src="${entrada.imagen}"&gt;
+                    &lt;p&gt;${entrada.descrición}&lt;/p&gt;
+                &lt;/a&gt;
+            `;
+            contenedor.appendChild(elemento);
+        });
+    })
+    .catch(error => console.error('Error al cargar las entradas:', error));
+                    </code>
+                </pre>
+                <h2>Paso 4: Agrega el archivo JavaScript</h2>
+                <p class="text">Agrégalo al "body" de tu HTML, y Para más comodidad, colocalo debajo de "entries-list"</p>
+                <pre>
+                    <code>
+&lt;div class="entries-list" id="entries-list"&gt;&lt/div&gt;
+&lt;script src="blog.js"&gt;&lt/script&gt;
+&lt;!--agregalo aquí--&gt;
+                    </code>
+                </pre>
+                <h2>Paso extra: Dale estilo con CSS</h2>
+                <p class="text">Si sabes usar, agrégale un diseño para que tenga más estilo. Aquí un ejemplo:</p>
+                <pre>
+                    <code>
+.entries-list {
+     background-color: White;
+     max-width: 60%;
+}
+
+.entry {
+   display: block;
+}
+                    </code>
+                </pre>
+                <h2>¿Cómo se usa?</h2>
+                <p class="text">Al subir una nueva entrada a tu carpeta de entradas, debes registrarla en la fila de tu .json. Esto hará que JavaScript la coloque automáticamente en la lista de entradas. Ejemplo:</p>
+                <pre>
+                    <code>
+[
+    {
+        "título": "Entrada 2",
+        "fecha": "5/9/2026",
+        "descripción": "una descripción de tu entrada",
+        "imagen": "imagenes/imagen.jpg",
+        "url": "entradas/entrada.html"
+    },
+    {
+        "título": "Entrada 1",
+        "fecha": "3/9/2026",
+        "descripción": "una descripción de tu entrada",
+        "imagen": "imagenes/imagen.jpg",
+        "url": "entradas/entrada.html"
+    }
+]
+                    </code>
+                </pre>
+                <h2>¡Listo!</h2>
+                <p class="text">Si te sirvió esta entrada, me gustaría que dejes un comentario y guardes esta página para ver más contenido en un futuro. ¡Gracias por leer!</p>
+            </div>
+            <!--cuerpo de la entrada-->
+        </div>
+        <div class="coments" id="cusdis_thread"
+            data-host="https://cusdis.com"
+            data-app-id="8f877631-6236-415f-8581-bb3bec5b0285"
+            data-page-id="{{ PAGE_ID }}"
+            data-page-url="{{ PAGE_URL }}"
+            data-page-title="{{ PAGE_TITLE }}"
+        ></div>
+        <script async defer src="https://cusdis.com/js/cusdis.es.js"></script>
+        <p class="comenta">¡Comenta!</p>
+        <div class="banner3">
+            <div id="frame" style="width: 300px;margin: auto;z-index: 99998;height: auto">
+              <iframe data-aa='2454195' src='//ad.a-ads.com/2454195/?size=300x250'
+                style='border:0; padding:0; width:300px; height:250px; overflow:hidden;display: block;margin: auto'></iframe>
+            </div>
+        </div>
+        <div class="banner2">
+            <div id="frame" style="width: 320px;margin: auto;z-index: 99998;height: auto">
+                <iframe data-aa='2454206' src='//ad.a-ads.com/2454206/?size=320x50'
+                            style='border:0; padding:0; width:320px; height:50px; overflow:hidden;display: block;margin: auto'></iframe>
+            </div>
+        </div>
+    </main>
+    <footer class="end">
+        <p>@Samuel Oberto 2026</p>
+    </footer>
+</body>
+</html>
