@@ -1,8 +1,15 @@
 [
     {
+        "title": "Como hacer una lista de entradas de blog (fácil)",
+        "date": "5/9/2026",
+        "description": "Paso 1: Crear un archivo .json Crear el archivo en la carpeta raíz de tu proyecto HTML, y recuerda ponerle un nombre que recuerdes fácil (ejemplos: posts, entradas, entre otras...",
+        "image": "none",
+        "url": "entries/lista/lista.html"
+    },
+    {
         "title": "Los peores juegos de cada universo GTA",
         "date": "30/8/2026",
-        "description": "Este es un DLC de GTA 1 lanzado el 31 de marzo de 1999 para PC y el 30 de abril en PlayStation 1...",
+        "description": "Este es un DLC de GTA 1 lanzado el 31 de marzo de 1991 para PC y el 30 de abril en PlayStation 1...",
         "image": "entries/gta/1.webp",
         "url": "entries/gta/gta.html"
     }
