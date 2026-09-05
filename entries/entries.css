@@ -21,15 +21,18 @@ body {
     background-color: greenyellow;
 }
 .entry-body {
-    display: grid;
-    grid-template-columns: auto;
     background-color: white;
-    max-width: 60%;
+    max-width: 100%;
+    width: 60%;
+    min-width: 0;
     box-shadow: 8px 8px black;
     border-top: 10px solid transparent;
     border-bottom: 10px solid transparent;
+    box-sizing: border-box;
     place-items: center;
     height: auto;
+    overflow-wrap: break-word;
+    word-break: break-word;
 }
 .entry {
     margin: 5px 30px;
@@ -96,6 +99,14 @@ body {
     top: 94%;
     right: 8%;
 }
+pre, code{
+    display: block;
+    white-space: pre-wrap;
+    word-break: break-all;
+    max-width: 100%;
+    overflow-x: auto;
+    box-sizing: border-box;
+}
 
 @media screen and (max-width: 768px) {
     body {
@@ -115,10 +126,16 @@ body {
     .entry-body {
         max-width: 100%;
         max-height: auto;
+        width: 100%;
+        min-width: 0;
+        padding: 10px 30px;
     }
     .entry {
-        display: -webkit-box;
-        -webkit-box-orient: vertical;
+        display: block;
+        width: 100%;
+        min-width: 0;
+        overflow-wrap: break-word;
+        margin: auto;
     }
     .logo {
         position: static;
@@ -149,5 +166,13 @@ body {
     .banner3 {
         position: static;
         display: block;
+    }
+    pre, code {
+        white-space: pre-wrap !important;
+        width: 100%;
+        display: block;
+        box-sizing: border-box;
+        text-align: left;
+        justify-self: start;
     }
 }
